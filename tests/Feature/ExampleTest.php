@@ -16,4 +16,11 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_the_homepage_contains_documentation_word(): void
+    {
+        $response = $this->get('/');
+        $response->assertSee('Documentation');
+        $response->assertStatus(200);
+    }
 }
